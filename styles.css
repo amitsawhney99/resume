@@ -36,3 +36,41 @@ body {
   transform: scale(1.05);
 }
 
+/* New styles for animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-square {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+#hero .floating-square:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+
+#hero .floating-square:nth-child(2) {
+  bottom: 20%;
+  right: 10%;
+}
+
